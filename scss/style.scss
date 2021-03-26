@@ -12,17 +12,23 @@ $blue: blue;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: gray;
+}
+
 .user-container {
     margin: auto;
     margin-top: 10rem;
-    height: 400px;
-    width: 400px;
+    max-width: 400px;
     border: $lightgray solid 1px;
     border-radius: 5px;
     box-shadow: 0 0 5px 0px rgba(136, 136, 136, 0.1);
     
     display: grid;
-    grid-template-rows: 5rem 2rem 8rem auto;
+    grid-template-rows: 5rem 2rem 8rem minmax(8rem, auto);
 
     & > :not(div:last-child) {
         border-bottom: lightgray solid 1px;
@@ -104,11 +110,12 @@ $blue: blue;
             justify-items: center;
 
             .control {
+                $control-size: 2.2rem;
                 color: $gray;
                 border: $lightgray solid 1px;
                 border-radius: 5px;
-                height: 40px;
-                width: 40px;
+                height: $control-size;
+                width: $control-size;
                 display: flex;
 
                 svg {
@@ -124,4 +131,18 @@ $blue: blue;
         }
     }
 
+    .category {
+        background-color: transparentize($green, 0.95);
+        display: flex;
+
+        .active-in {
+            $spacing: 1rem;
+            padding-right: $spacing;
+            margin-right: $spacing;
+            border-right: 1px solid $lightgray;
+        }
+        p {
+            color: $gray;
+        }
+    }
 }
