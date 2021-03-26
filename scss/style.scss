@@ -1,11 +1,15 @@
+$lightgreen: lighten(rgb(0, 158, 61), 10);
 $green: green;
 $gray: gray;
-$lightgray: lightgray;
+$lightgray: lighten(lightgray, 6);
 $red: red;
 $blue: blue;
 
-p {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .user-container {
@@ -13,19 +17,19 @@ p {
     margin-top: 10rem;
     height: 400px;
     width: 400px;
-    border: lightgray solid 1px;
+    border: $lightgray solid 1px;
     border-radius: 5px;
-    box-shadow: 0 0 5px 0px rgb(136,136,136);
+    box-shadow: 0 0 5px 0px rgba(136, 136, 136, 0.1);
     
     display: grid;
-    grid-template-rows: 100px 33px 133px auto;
+    grid-template-rows: 5rem 2rem 8rem auto;
 
     & > :not(div:last-child) {
         border-bottom: lightgray solid 1px;
     }
 
     & > div {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
     }
     & > div.category {
         padding: 0.5rem 1.3rem;
@@ -36,20 +40,88 @@ p {
     }
 
     .base-info {
-        .deafen {
-          color: $gray;
+        display: grid;
+        grid-template-columns: 2fr 10fr 4fr;
+        grid-gap: 0.8rem;
+
+        .profile-picture {
+            display: flex;
+            height: 100%;
+            width: 100%;
+
+            .image {
+                background-color: $gray;
+                border-radius: 50%;
+                width: 100%;
+                align-self: center;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+
+                .user-status {
+                    background-color: $lightgreen;
+                    border: 0.15rem solid white;
+                    border-radius: 50%;
+                    width: 30%;
+                    align-self: center;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+    
+                    &:after {
+                        content: "";
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+                }
+            }
         }
-        .mute {
-          color: $gray;
-          border: $gray solid 1px;
-          border-radius: 5px;
-          padding: 0.3rem;
+
+        .personal-info {
+            margin: auto;
+
+            .phone {
+                a {
+                    color: $gray;
+                    text-decoration: none;
+                }
+
+                .flag img {
+                    height: 0.7rem;
+                }
+            }
         }
-        
-        .active {
-          color: $green;
-          border-color: $green;
-          background-color: transparentize($green, 0.75);
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 0;
+            align-items: center;
+            justify-items: center;
+
+            .control {
+                color: $gray;
+                border: $lightgray solid 1px;
+                border-radius: 5px;
+                height: 40px;
+                width: 40px;
+                display: flex;
+
+                svg {
+                    margin: auto;
+                }
+            }
+            
+            .active {
+              color: $lightgreen;
+              border-color: $lightgreen;
+              background-color: transparentize($lightgreen, 0.75);
+            }
         }
-      }
+    }
+
 }
