@@ -1,5 +1,6 @@
 $green: green;
-$gray: lightgray;
+$gray: gray;
+$lightgray: lightgray;
 $red: red;
 $blue: blue;
 
@@ -33,4 +34,22 @@ p {
     div {
         display: inline-block;
     }
+
+    .base-info {
+        .deafen {
+          color: $gray;
+        }
+        .mute {
+          color: $gray;
+          border: $gray solid 1px;
+          border-radius: 5px;
+          padding: 0.3rem;
+        }
+        
+        .active {
+          color: $green;
+          border-color: $green;
+          background-color: transparentize($green, 0.75);
+        }
+      }
 }
