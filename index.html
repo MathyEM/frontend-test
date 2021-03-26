@@ -1,13 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Testopgave</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <p>Hello world</p>
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Frontend Testopgave</title>
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+        <script defer src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    </head>
+    <body>
+        <section class="user-container">
+            <div class="base-info">
+                <div class="profile-picture"></div>
+                    <div class="name">
+                        <p>Jane Cooper</p>
+                    </div>
+                <div class="phone">
+                    <div class="flag"></div>
+                    <a href="tel:4065550120">(406)555-120</a>
+                </div>
+                <div class="controls">
+                    <div class="deafen">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <div class="mute active">
+                        <i class="fas fa-microphone-slash"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="active-in">
+                    <p>Active in</p>
+                </div>
+                <p>Health Supplements</p>
+            </div>
+            <div class="activity">
+                <div class="month">
+                    <p>Month</p>
+                </div>
+                <div class="week">
+                    <p>Week</p>
+                </div>
+            </div>
+            <div class="orders">
+                <p>Recent orders</p>
+                <div class="items">
+                    <div class="item item-1">
+                        <div class="item-name">Berkshire Hathaway</div>
+                        <div class="status">Needs approval</div>
+                        <div class="options"></div>
+                    </div>
+                    <div class="item item-2">
+                        <div class="item-name">CVS Health Corp</div>
+                        <div class="status">Pending</div>
+                        <div class="options"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
