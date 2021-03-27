@@ -45,6 +45,8 @@ h4 {
         display: inline-block;
     }
 
+
+    /// BASE INFO START
     .base-info {
         display: grid;
         grid-template-columns: 2fr 10fr 4fr;
@@ -130,7 +132,9 @@ h4 {
             }
         }
     }
+    /// BASE INFO END
 
+    /// CATEGORY START
     .category {
         background-color: transparentize($green, 0.95);
         display: flex;
@@ -145,4 +149,5 @@ h4 {
             color: $gray;
         }
     }
+    /// CATEGORY END
 }
