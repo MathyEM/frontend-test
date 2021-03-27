@@ -5,6 +5,9 @@ $lightgray: lighten(lightgray, 6);
 $red: red;
 $blue: blue;
 
+$vertical-padding: 0.5rem;
+$side-padding: 1rem;
+
 * {
     margin: 0;
     padding: 0;
@@ -35,10 +38,7 @@ h4 {
     }
 
     & > div {
-        padding: 0.5rem 1rem;
-    }
-    & > div.category {
-        padding: 0.5rem 1.3rem;
+        padding: $vertical-padding $side-padding;
     }
 
     div {
@@ -138,6 +138,7 @@ h4 {
     .category {
         background-color: transparentize($green, 0.95);
         display: flex;
+        padding: 0.5rem 1.3rem;
 
         .active-in {
             $spacing: 1rem;
@@ -150,4 +151,133 @@ h4 {
         }
     }
     /// CATEGORY END
+
+    /// ACTIVITY START
+    .activity {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+
+        &>div {
+            padding: 1.2rem $side-padding;
+            display: grid;
+            grid-template-rows: min-content auto;
+            grid-gap: 0.3rem;
+            justify-content: center;
+
+            &:first-child {
+                border-right: solid $lightgray 1px;
+            }
+
+            &.month-activity {
+                .months {
+                    grid-template-columns: repeat(12, 1fr);
+
+                    &>div {
+
+                        &.jan .value {
+                            height: 60%;
+                        }
+                        &.feb .value {
+                            height: 40%;
+                        }
+                        &.mar .value {
+                            height: 20%;
+                        }
+                        &.apr .value {
+                            height: 50%;
+                        }
+                        &.may .value {
+                            height: 70%;
+                        }
+                        &.jun .value {
+                            height: 5%;
+                        }
+                        &.jul .value {
+                            height: 15%;
+                        }
+                        &.aug .value {
+                            height: 90%;
+                        }
+                        &.sep .value {
+                            height: 60%;
+                        }
+                        &.oct .value {
+                            height: 20%;
+                        }
+                        &.nov .value {
+                            height: 40%;
+                        }
+                        &.dec .value {
+                            height: 60%;
+                        }
+                    }
+                    
+                }
+            }
+    
+            &.week-activity {
+                .weeks {
+                    grid-template-columns: repeat(7, min-content);
+
+                    &>div {
+
+                        &.mon .value {
+                            height: 60%;
+                        }
+                        &.tue .value {
+                            height: 40%;
+                        }
+                        &.wed .value {
+                            height: 20%;
+                        }
+                        &.thu .value {
+                            height: 40%;
+                        }
+                        &.fri .value {
+                            height: 50%;
+                        }
+                        &.sat .value {
+                            height: 10%;
+                        }
+                        &.sun .value {
+                            height: 15%;
+                        }
+                    }
+                }
+            }
+
+            &>div {
+                display: grid;
+                grid-gap: 0.25rem;
+                text-align: center;
+                height: 100%;
+
+                &>div {
+                    height: 100%;
+                    display: grid;
+                    grid-template-rows: auto min-content;
+                    grid-gap: 0.4rem;
+                    align-items: end;
+                    width: 0.6rem;
+                }
+
+                .value {
+                    background-color: $lightgray;
+                    height: 1%;
+                    width: 100%;
+                    border-radius: 10%;
+                }
+
+                p {
+                    color: darken($lightgray, 10%);
+                    font-size: 0.6rem;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+
+    /// ACTIVITY END
 }
