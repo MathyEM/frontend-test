@@ -1,2 +1,227 @@
-p {
-  color: red; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: darkgray; }
+
+h5 {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: normal; }
+
+a {
+  text-decoration: none;
+  color: darkgray; }
+
+a:hover, .value:hover, .item:hover {
+  filter: brightness(0.9);
+  transition: background-color 100ms; }
+
+.user-container {
+  margin: auto;
+  margin-top: 10rem;
+  max-width: 400px;
+  border: #e2e2e2 solid 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0px rgba(136, 136, 136, 0.1);
+  display: grid;
+  grid-template-rows: 5rem 2rem 8rem minmax(8rem, auto); }
+  .user-container > :not(div:last-child) {
+    border-bottom: lightgray solid 1px; }
+  .user-container .base-info, .user-container .category, .user-container .activity, .user-container .orders {
+    padding: 0.5rem 1rem; }
+  .user-container div {
+    display: inline-block; }
+  .user-container .base-info {
+    display: grid;
+    grid-template-columns: 2fr 10fr 4fr;
+    grid-gap: 0.8rem; }
+    .user-container .base-info .profile-picture {
+      display: flex;
+      height: 100%;
+      width: 100%; }
+      .user-container .base-info .profile-picture .image {
+        background-color: gray;
+        border-radius: 50%;
+        width: 100%;
+        align-self: center;
+        position: relative; }
+        .user-container .base-info .profile-picture .image:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%; }
+        .user-container .base-info .profile-picture .image .user-status {
+          background-color: #00d151;
+          border: 0.15rem solid white;
+          border-radius: 50%;
+          width: 30%;
+          align-self: center;
+          position: absolute;
+          bottom: 0;
+          right: 0; }
+          .user-container .base-info .profile-picture .image .user-status:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%; }
+    .user-container .base-info .personal-info {
+      margin: auto; }
+      .user-container .base-info .personal-info .phone .flag img {
+        height: 0.7rem;
+        margin-right: 0.3rem; }
+    .user-container .base-info .sound-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0;
+      align-items: center;
+      justify-items: center; }
+      .user-container .base-info .sound-controls .control {
+        color: gray;
+        background-color: white;
+        border: #e2e2e2 solid 1px;
+        border-radius: 5px;
+        height: 2.2rem;
+        width: 2.2rem;
+        display: flex; }
+        .user-container .base-info .sound-controls .control svg {
+          margin: auto; }
+        .user-container .base-info .sound-controls .control:hover {
+          filter: brightness(0.9);
+          box-shadow: inset -1px 1px 3px -2px black;
+          transition: background-color 100ms, box-shadow 100ms; }
+      .user-container .base-info .sound-controls .active {
+        color: #00d151;
+        border-color: #00d151;
+        background-color: rgba(0, 209, 81, 0.25); }
+  .user-container .category {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 128, 0, 0.05);
+    padding: 0.5rem 1.3rem; }
+    .user-container .category .active-in {
+      padding-right: 1rem;
+      margin-right: 1rem;
+      border-right: 1px solid #e2e2e2; }
+    .user-container .category p {
+      color: gray;
+      font-size: 0.95rem; }
+  .user-container .activity {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0; }
+    .user-container .activity > div {
+      padding: 1.2rem 1rem;
+      display: grid;
+      grid-template-rows: min-content auto;
+      grid-gap: 0.3rem;
+      justify-content: center; }
+      .user-container .activity > div:first-child {
+        border-right: solid #e2e2e2 1px; }
+      .user-container .activity > div > div {
+        display: grid;
+        grid-gap: 0.25rem;
+        text-align: center;
+        height: 100%; }
+        .user-container .activity > div > div > div {
+          height: 100%;
+          display: grid;
+          grid-template-rows: auto min-content;
+          grid-gap: 0.4rem;
+          align-items: end;
+          width: 0.6rem; }
+        .user-container .activity > div > div .value {
+          background-color: #e2e2e2;
+          height: 1%;
+          width: 100%;
+          border-radius: 2.5px; }
+        .user-container .activity > div > div p {
+          color: #c9c9c9;
+          font-size: 0.6rem;
+          font-weight: bold; }
+      .user-container .activity > div.month-activity .month-container {
+        grid-template-columns: repeat(12, 1fr); }
+        .user-container .activity > div.month-activity .month-container .month.jan .value {
+          height: 60%; }
+        .user-container .activity > div.month-activity .month-container .month.feb .value {
+          height: 40%; }
+        .user-container .activity > div.month-activity .month-container .month.mar .value {
+          height: 20%; }
+        .user-container .activity > div.month-activity .month-container .month.apr .value {
+          height: 50%; }
+        .user-container .activity > div.month-activity .month-container .month.may .value {
+          height: 70%; }
+        .user-container .activity > div.month-activity .month-container .month.jun .value {
+          height: 5%; }
+        .user-container .activity > div.month-activity .month-container .month.jul .value {
+          height: 15%; }
+        .user-container .activity > div.month-activity .month-container .month.aug .value {
+          height: 90%; }
+        .user-container .activity > div.month-activity .month-container .month.sep .value {
+          height: 60%; }
+        .user-container .activity > div.month-activity .month-container .month.oct .value {
+          height: 20%; }
+        .user-container .activity > div.month-activity .month-container .month.nov .value {
+          height: 40%; }
+        .user-container .activity > div.month-activity .month-container .month.dec .value {
+          height: 60%; }
+      .user-container .activity > div.week-activity .week-container {
+        grid-template-columns: repeat(7, min-content); }
+        .user-container .activity > div.week-activity .week-container .day.mon .value {
+          height: 60%; }
+        .user-container .activity > div.week-activity .week-container .day.tue .value {
+          height: 40%; }
+        .user-container .activity > div.week-activity .week-container .day.wed .value {
+          height: 20%; }
+        .user-container .activity > div.week-activity .week-container .day.thu .value {
+          height: 40%; }
+        .user-container .activity > div.week-activity .week-container .day.fri .value {
+          height: 50%; }
+        .user-container .activity > div.week-activity .week-container .day.sat .value {
+          height: 10%; }
+        .user-container .activity > div.week-activity .week-container .day.sun .value {
+          height: 15%; }
+  .user-container .orders {
+    padding: 1.5rem 1rem; }
+    .user-container .orders h4 {
+      margin-bottom: 0.75rem; }
+    .user-container .orders .items {
+      list-style: none; }
+      .user-container .orders .items .item {
+        border: #e2e2e2 solid 1px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #fcfcfc;
+        padding: 0.25rem 0.5rem;
+        display: grid;
+        grid-template-columns: 4fr 5fr 1fr;
+        align-items: center; }
+        .user-container .orders .items .item:not(:last-child) {
+          border-bottom: none;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0; }
+        .user-container .orders .items .item .item-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .user-container .orders .items .item .status, .user-container .orders .items .item .options {
+          justify-self: end; }
+        .user-container .orders .items .item .status.needs-approval {
+          color: #ff8080; }
+        .user-container .orders .items .item .status.pending {
+          color: dodgerblue; }
+        .user-container .orders .items .item .options {
+          font-size: 1.2rem;
+          text-align: center;
+          border-radius: 2.5px;
+          background-color: inherit; }
+          .user-container .orders .items .item .options:hover {
+            filter: brightness(0.9);
+            box-shadow: inset -1px 1px 3px -2px black;
+            transition: background-color 70ms, box-shadow 70ms; }
