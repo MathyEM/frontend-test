@@ -2,6 +2,6 @@
 Example of frontend development.
 
 # Recreate the following design:
-![alt-text](http://github.com/MathyEM/frontend-test/blob/main/design%20template.jpg?raw=true)
+![design template](https://raw.githubusercontent.com/MathyEM/frontend-test/main/design%20template.jpg)
 
 Written in plain HTML and SCSS
