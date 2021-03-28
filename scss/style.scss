@@ -100,11 +100,12 @@ h4 {
 
                 .flag img {
                     height: 0.7rem;
+                    margin-right: 0.3rem;
                 }
             }
         }
 
-        .controls {
+        .sound-controls {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 0;
@@ -169,12 +170,40 @@ h4 {
                 border-right: solid $lightgray 1px;
             }
 
+            &>div {
+                display: grid;
+                grid-gap: 0.25rem;
+                text-align: center;
+                height: 100%;
+
+                &>div {
+                    height: 100%;
+                    display: grid;
+                    grid-template-rows: auto min-content;
+                    grid-gap: 0.4rem;
+                    align-items: end;
+                    width: 0.6rem;
+                }
+
+                .value {
+                    background-color: $lightgray;
+                    height: 1%;
+                    width: 100%;
+                    border-radius: 10%;
+                }
+
+                p {
+                    color: darken($lightgray, 10%);
+                    font-size: 0.6rem;
+                    font-weight: bold;
+                }
+            }
+
             &.month-activity {
-                .months {
+                .month-container {
                     grid-template-columns: repeat(12, 1fr);
 
-                    &>div {
-
+                    .month {
                         &.jan .value {
                             height: 60%;
                         }
@@ -217,11 +246,10 @@ h4 {
             }
     
             &.week-activity {
-                .weeks {
+                .week-container {
                     grid-template-columns: repeat(7, min-content);
 
-                    &>div {
-
+                    .day {
                         &.mon .value {
                             height: 60%;
                         }
@@ -247,34 +275,6 @@ h4 {
                 }
             }
 
-            &>div {
-                display: grid;
-                grid-gap: 0.25rem;
-                text-align: center;
-                height: 100%;
-
-                &>div {
-                    height: 100%;
-                    display: grid;
-                    grid-template-rows: auto min-content;
-                    grid-gap: 0.4rem;
-                    align-items: end;
-                    width: 0.6rem;
-                }
-
-                .value {
-                    background-color: $lightgray;
-                    height: 1%;
-                    width: 100%;
-                    border-radius: 10%;
-                }
-
-                p {
-                    color: darken($lightgray, 10%);
-                    font-size: 0.6rem;
-                    font-weight: bold;
-                }
-            }
         }
 
     }
