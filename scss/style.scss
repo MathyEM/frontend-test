@@ -1,12 +1,17 @@
 $lightgreen: lighten(rgb(0, 158, 61), 10);
 $green: green;
+$white: white;
+$black: lighten(black, 20%);
+$darkgray: darkgray;
 $gray: gray;
-$lightgray: lighten(lightgray, 6);
-$red: red;
-$blue: blue;
+$lightgray: lighten(lightgray, 6%);
+$red: lighten(red, 25%);
+$blue: saturate(dodgerblue, 10%);
 
 $vertical-padding: 0.5rem;
 $side-padding: 1rem;
+
+$border-radius: 5px;
 
 * {
     margin: 0;
@@ -17,17 +22,35 @@ $side-padding: 1rem;
 
 h4 {
     font-size: 0.75rem;
-    text-transform: uppercase;
     letter-spacing: 0.1rem;
-    color: gray;
+    text-transform: uppercase;
+    color: $darkgray;
 }
+
+h5 {
+    font-size: 1rem;
+    color: $black;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: $darkgray;
+}
+
+a:hover, .value:hover, .item:hover {
+    filter: brightness(0.9);
+    transition: background-color 100ms;
+}
+
+
 
 .user-container {
     margin: auto;
     margin-top: 10rem;
     max-width: 400px;
     border: $lightgray solid 1px;
-    border-radius: 5px;
+    border-radius: $border-radius;
     box-shadow: 0 0 5px 0px rgba(136, 136, 136, 0.1);
     
     display: grid;
@@ -37,7 +60,7 @@ h4 {
         border-bottom: lightgray solid 1px;
     }
 
-    & > div {
+    .base-info, .category, .activity, .orders {
         padding: $vertical-padding $side-padding;
     }
 
@@ -93,11 +116,6 @@ h4 {
             margin: auto;
 
             .phone {
-                a {
-                    color: $gray;
-                    text-decoration: none;
-                }
-
                 .flag img {
                     height: 0.7rem;
                     margin-right: 0.3rem;
@@ -115,14 +133,22 @@ h4 {
             .control {
                 $control-size: 2.2rem;
                 color: $gray;
+                background-color: $white;
                 border: $lightgray solid 1px;
-                border-radius: 5px;
+                border-radius: $border-radius;
                 height: $control-size;
                 width: $control-size;
                 display: flex;
 
                 svg {
                     margin: auto;
+                }
+
+                &:hover {
+                    $speed: 100ms;
+                    filter: brightness(0.9);
+                    box-shadow: inset -1px 1px 3px -2px rgba(0, 0, 0, 70%);
+                    transition: background-color $speed, box-shadow $speed;
                 }
             }
             
@@ -137,8 +163,9 @@ h4 {
 
     /// CATEGORY START
     .category {
-        background-color: transparentize($green, 0.95);
         display: flex;
+        align-items: center;
+        background-color: transparentize($green, 0.95);
         padding: 0.5rem 1.3rem;
 
         .active-in {
@@ -149,6 +176,7 @@ h4 {
         }
         p {
             color: $gray;
+            font-size: 0.95rem;
         }
     }
     /// CATEGORY END
@@ -189,7 +217,7 @@ h4 {
                     background-color: $lightgray;
                     height: 1%;
                     width: 100%;
-                    border-radius: 10%;
+                    border-radius: $border-radius/2;
                 }
 
                 p {
@@ -278,6 +306,75 @@ h4 {
         }
 
     }
-
     /// ACTIVITY END
+
+    /// ORDERS START
+    .orders {
+        padding: $vertical-padding*3 $side-padding;
+
+        h4 {
+            margin-bottom: 0.75rem;
+        }
+
+        .items {
+            list-style: none;
+
+            .item {
+                border: $lightgray solid 1px;
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+                background-color: lighten($lightgray, 10);
+                padding: $vertical-padding/2 $vertical-padding;
+
+                display: grid;
+                grid-template-columns: 4fr 5fr 1fr;
+                align-items: center;
+
+                &:not(:last-child) {
+                    border-bottom: none;
+                    border-top-left-radius: $border-radius;
+                    border-top-right-radius: $border-radius;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                .item-name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .status, .options {
+                    justify-self: end;
+                }
+
+                .status {
+                    
+                    &.needs-approval {
+                        color: $red;
+                    }
+
+                    &.pending {
+                        color: $blue;
+                    }
+                }
+
+                .options {
+                    font-size: 1.2rem;
+                    text-align: center;
+                    border-radius: $border-radius/2;
+                    background-color: inherit;
+
+                    &:hover {
+                        $speed: 70ms;
+                        filter: brightness(0.9);
+                        box-shadow: inset -1px 1px 3px -2px rgba(0, 0, 0, 70%);
+                        transition: background-color $speed, box-shadow $speed;
+                    }
+                }
+            }
+        }
+    }
+
+    /// ORDERS END
 }
