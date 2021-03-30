@@ -152,12 +152,18 @@ a:hover, .value:hover, .item:hover {
                 }
             }
             
-            .active {
-              color: $lightgreen;
-              border-color: $lightgreen;
-              background-color: transparentize($lightgreen, 0.75);
+            .control-toggle {
+                visibility: hidden;
+                position: absolute;
+
+                &:checked ~ .control {
+                    color: $lightgreen;
+                    border-color: $lightgreen;
+                    background-color: transparentize($lightgreen, 0.75);
+                }
             }
         }
+
     }
     /// BASE INFO END
 
